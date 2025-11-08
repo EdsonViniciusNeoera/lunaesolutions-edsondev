@@ -1,0 +1,85 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { PiHouseBold, PiInfoBold, PiSuitcaseBold, PiEnvelopeBold, PiListBold } from "react-icons/pi";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+export const metadata: Metadata = {
+  title: "Lunae Solutions | Desenvolvimento Full Stack, IA e Consultoria Tech",
+  description: "Transformamos negócios locais e pequenas empresas com desenvolvimento full stack, automação com IA e consultoria tecnológica personalizada. Orçamento gratuito!",
+  keywords: ["desenvolvimento web", "full stack", "inteligência artificial", "automação", "consultoria tech", "pequenas empresas", "negócios locais"],
+  authors: [{ name: "Lunae Solutions" }],
+  creator: "Lunae Solutions",
+  publisher: "Lunae Solutions",
+  metadataBase: new URL("https://lunaesolutions.com"),
+  openGraph: {
+    title: "Lunae Solutions | Soluções Digitais Inteligentes",
+    description: "Especialistas em desenvolvimento full stack, automação com IA e consultoria tech para pequenas empresas.",
+    url: "https://lunaesolutions.com",
+    siteName: "Lunae Solutions",
+    type: "website",
+    locale: "pt_BR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lunae Solutions | Soluções Digitais Inteligentes", 
+    description: "Transformamos negócios com tecnologia de ponta e consultoria especializada.",
+  },
+  viewport: "width=device-width, initial-scale=1",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="pt-BR">
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex-shrink-0">
+                <a href="/" className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Lunae Solutions
+                </a>
+              </div>
+              <div className="hidden md:block">
+                <div className="ml-10 flex items-baseline space-x-8">
+                  <a href="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                    <PiHouseBold className="mr-1" /> Início
+                  </a>
+                  <a href="/about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                    <PiInfoBold className="mr-1" /> Sobre
+                  </a>
+                  <a href="/portfolio" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                    <PiSuitcaseBold className="mr-1" /> Portfolio
+                  </a>
+                  <a href="mailto:contato@lunaesolutions.com" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center">
+                    <PiEnvelopeBold className="mr-1" /> Contato
+                  </a>
+                </div>
+              </div>
+              <div className="md:hidden">
+                <button className="text-gray-700 dark:text-gray-300 p-2">
+                  <PiListBold className="h-6 w-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <main className="pt-16">
+          {children}
+        </main>
+      </body>
+    </html>
+  );
+}
