@@ -41,9 +41,13 @@ export default function Home() {
         <div className="relative z-10 flex items-center justify-center min-h-screen p-8">
           <div className="text-center max-w-6xl mx-auto">
             <FadeInUp>
-              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-8">
-                <TypewriterText text="Lunae Solutions" />
-              </h1>
+              <div className="relative">
+                {/* Glow effect behind title */}
+                <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-blue-600/20 dark:via-purple-600/20 dark:to-cyan-600/20 dark:blur-3xl dark:scale-110"></div>
+                <h1 className="relative text-5xl sm:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-8">
+                  <TypewriterText text="Lunae Solutions" />
+                </h1>
+              </div>
             </FadeInUp>
             
             <FadeInLeft delay={0.8}>

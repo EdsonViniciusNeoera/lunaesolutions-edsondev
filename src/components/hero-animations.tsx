@@ -56,10 +56,10 @@ export const AnimatedHero = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 dark:bg-gradient-to-br dark:from-[#0B0B0F] dark:to-[#12122A]">
       {/* Animated background gradient */}
       <motion.div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20 dark:opacity-8"
         animate={{
           background: [
             "radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%)",
@@ -74,6 +74,9 @@ export const AnimatedHero = () => {
           ease: "linear",
         }}
       />
+
+      {/* Subtle dark mode gradient overlay */}
+      <div className="absolute inset-0 dark:bg-gradient-radial dark:from-purple-900/5 dark:via-blue-900/3 dark:to-transparent"></div>
 
       {/* Floating particles */}
       <div className="absolute inset-0">
