@@ -17,8 +17,9 @@ export const AnimatedHero = () => {
 
   useEffect(() => {
     setIsClient(true);
-    // Gerar posições das partículas apenas no cliente
-    const newParticles = [...Array(20)].map(() => ({
+    // Reduzir partículas para melhor performance
+    const particleCount = window.innerWidth < 768 ? 8 : 12; // Menos partículas em mobile
+    const newParticles = [...Array(particleCount)].map(() => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
       animationX: Math.random() * 100 - 50,
@@ -30,12 +31,28 @@ export const AnimatedHero = () => {
   }, []);
 
   useEffect(() => {
+    let animationId: number;
     const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      // Throttle mouse updates para melhor performance
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+      animationId = requestAnimationFrame(() => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      });
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
-    return () => window.removeEventListener("mousemove", updateMousePosition);
+    // Só ativar em desktop para melhor performance
+    if (window.innerWidth >= 768) {
+      window.addEventListener("mousemove", updateMousePosition, { passive: true });
+    }
+    
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+      window.removeEventListener("mousemove", updateMousePosition);
+    };
   }, []);
 
   return (
@@ -83,22 +100,24 @@ export const AnimatedHero = () => {
         ))}
       </div>
 
-      {/* Interactive cursor follow */}
-      <motion.div
-        className="absolute pointer-events-none"
-        animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-        }}
-        transition={{
-          type: "spring",
-          damping: 30,
-          stiffness: 200,
-          mass: 0.5,
-        }}
-      >
-        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-20 blur-sm" />
-      </motion.div>
+      {/* Interactive cursor follow - apenas desktop */}
+      {isClient && window.innerWidth >= 768 && (
+        <motion.div
+          className="absolute pointer-events-none hidden md:block"
+          animate={{
+            x: mousePosition.x - 16,
+            y: mousePosition.y - 16,
+          }}
+          transition={{
+            type: "spring",
+            damping: 30,
+            stiffness: 200,
+            mass: 0.5,
+          }}
+        >
+          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-20 blur-sm" />
+        </motion.div>
+      )}
     </div>
   );
 };

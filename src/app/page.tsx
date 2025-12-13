@@ -9,10 +9,10 @@ import {
   StaggerItem 
 } from "@/components/animations";
 import { 
-  AnimatedHero, 
   TypewriterText, 
   PulseButton 
 } from "@/components/hero-animations";
+import { LazyAnimatedHero } from "@/components/lazy-hero";
 import { 
   PiCodeBold, 
   PiRobotBold, 
@@ -36,7 +36,7 @@ export default function Home() {
     <div className="relative">
       {/* Hero Section */}
       <section className="relative min-h-screen pt-16">
-        <AnimatedHero />
+        <LazyAnimatedHero />
         
         <div className="relative z-10 flex items-center justify-center min-h-screen p-8">
           <div className="text-center max-w-6xl mx-auto">

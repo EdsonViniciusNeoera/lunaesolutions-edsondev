@@ -28,19 +28,19 @@ export default function Portfolio() {
       features: ["Dashboard intuitivo", "Gestão de estoque", "Relatórios automáticos", "Pagamentos online"]
     },
     {
-      title: "Chatbot Inteligente para Restaurante", 
+      title: "Chatbot Inteligente para Óticas", 
       category: "IA & Automação",
-      description: "Agente de IA que automatiza pedidos via WhatsApp e gerencia reservas de mesa.",
+      description: "Agente de IA que automatiza atendimento via WhatsApp totalmente automatizado e personalizado.",
       tech: ["OpenAI API", "Node.js", "WhatsApp API", "MongoDB"],
       icon: PiRobotBold,
       color: "text-purple-600 dark:text-purple-400",
-      features: ["Pedidos automatizados", "Reservas inteligentes", "Cardápio dinâmico", "Suporte 24/7"]
+      features: ["Atendimento automatizado", "Agendamento inteligente", "Catálogo de produtos", "Suporte 24/7"]
     },
     {
       title: "Consultoria de Migração para Nuvem",
       category: "Consultoria Tech",
-      description: "Migração completa de sistemas legados para AWS, reduzindo custos em 40%.",
-      tech: ["AWS", "Docker", "Kubernetes", "Terraform"],
+      description: "Migração completa de sistemas legados para Azure, reduzindo custos em 40%.",
+      tech: ["Azure", "Docker", "Kubernetes", "Terraform"],
       icon: PiCloudBold,
       color: "text-cyan-600 dark:text-cyan-400",
       features: ["Análise de custos", "Migração segura", "Automação CI/CD", "Monitoramento"]
