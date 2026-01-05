@@ -30,7 +30,7 @@ export const FadeInUp = ({ children, className = "", delay = 0 }: AnimatedSectio
 export const FadeInLeft = ({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -30 }}
+      initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ 
@@ -38,7 +38,7 @@ export const FadeInLeft = ({ children, className = "", delay = 0 }: AnimatedSect
         delay,
         ease: [0.21, 1.11, 0.81, 0.99]
       }}
-      className={className}
+      className={`overflow-x-hidden ${className}`}
     >
       {children}
     </motion.div>

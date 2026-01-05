@@ -177,10 +177,11 @@ export default function Portfolio() {
             </h2>
           </FadeInUp>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 text-center">
             {[
-              { number: "30+", label: "Projetos Entregues", icon: PiRocketLaunchBold },
-              { number: "25+", label: "Clientes Satisfeitos", icon: PiHeartBold },
+              { number: "21+", label: "Projetos Entregues", icon: PiRocketLaunchBold },
+              { number: "15+", label: "Clientes Satisfeitos", icon: PiHeartBold },
+              { number: "3+", label: "Empresas Atendidas", icon: PiStorefrontBold },
               { number: "40%", label: "Redução Média de Custos", icon: PiCurrencyDollarBold },
               { number: "24/7", label: "Suporte Técnico", icon: PiWrenchBold }
             ].map((stat, index) => {

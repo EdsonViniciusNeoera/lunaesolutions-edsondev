@@ -86,14 +86,15 @@ export default function About() {
           </motion.p>
 
           <MagneticButton>
-            <motion.button
+            <motion.a
+              href="mailto:viniciuspereira76@hotmail.com?subject=Olá, gostaria de conversar sobre um projeto"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300"
+              className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300"
             >
               Vamos conversar!
-            </motion.button>
+            </motion.a>
           </MagneticButton>
         </div>
       </section>
@@ -101,11 +102,16 @@ export default function About() {
       {/* Features Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Por que trabalhar comigo?
             </h2>
-          </ScrollReveal>
+          </motion.div>
 
           <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
@@ -116,8 +122,8 @@ export default function About() {
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1, type: "spring", stiffness: 200 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ delay: index * 0.1, type: "spring", stiffness: 200, damping: 15 }}
                       className={`mb-4 ${feature.color}`}
                     >
                       <IconComponent className="text-4xl" />
@@ -139,12 +145,13 @@ export default function About() {
       {/* Stats Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 text-center">
             {[
-              { number: 50, suffix: "+", label: "Pequenas Empresas Atendidas", icon: PiTargetBold },
-              { number: 30, suffix: "+", label: "Projetos Full Stack", icon: PiCodeBold },
-              { number: 15, suffix: "+", label: "Automações com IA", icon: PiRobotBold },
-              { number: 24, suffix: "/7", label: "Suporte Técnico", icon: PiClockBold }
+              { number: 8, suffix: "+", label: "Apps e Games", icon: PiTargetBold },
+              { number: 4, suffix: "+", label: "Web Apps", icon: PiCodeBold },
+              { number: 6, suffix: "+", label: "Consultorias", icon: PiLightbulbBold },
+              { number: 3, suffix: "+", label: "Automações com IA", icon: PiRobotBold },
+              { number: 5, suffix: " anos", label: "Experiência", icon: PiClockBold }
             ].map((stat, index) => {
               const IconComponent = stat.icon;
               return (
@@ -152,8 +159,8 @@ export default function About() {
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
                   className="text-white"
                 >
                   <div className="flex justify-center mb-2">
@@ -162,8 +169,8 @@ export default function About() {
                   <motion.div
                     initial={{ scale: 0.5 }}
                     whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2 + 0.3, type: "spring", stiffness: 200 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: index * 0.1 + 0.2, type: "spring", stiffness: 200, damping: 15 }}
                     className="text-4xl sm:text-5xl font-bold mb-2"
                   >
                     {stat.number}{stat.suffix}
@@ -179,25 +186,43 @@ export default function About() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h2 className="text-3xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Pronto para transformar seu negócio?
+              Pronto para começar seu projeto?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Entre em contato comigo e descubra como minhas soluções podem impulsionar o crescimento da sua empresa.
+              Vamos transformar sua ideia em realidade! Entre em contato e receba uma proposta personalizada.
             </p>
             
-            <MagneticButton>
-              <motion.a
-                href="/"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300"
-              >
-                Voltar ao Início
-              </motion.a>
-            </MagneticButton>
-          </ScrollReveal>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <MagneticButton>
+                <motion.a
+                  href="mailto:viniciuspereira76@hotmail.com?subject=Solicitação de Orçamento"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300"
+                >
+                  Solicitar Orçamento
+                </motion.a>
+              </MagneticButton>
+              
+              <MagneticButton>
+                <motion.a
+                  href="https://wa.me/5581999904-5078?text=Olá! Vi seu site e gostaria de conversar sobre um projeto."
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
+                >
+                  WhatsApp
+                </motion.a>
+              </MagneticButton>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

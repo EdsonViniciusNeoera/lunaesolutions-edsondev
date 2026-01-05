@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 export const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     const checkIsMobile = () => {
@@ -23,7 +23,7 @@ export const useIsMobile = () => {
 };
 
 export const useReducedMotion = () => {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');

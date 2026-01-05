@@ -1,23 +1,43 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { PiHouseBold, PiInfoBold, PiSuitcaseBold, PiEnvelopeBold, PiListBold } from "react-icons/pi";
+import { OrganizationSchema, PersonSchema, WebSiteSchema } from "@/components/seo-schemas";
+import Navigation from "@/components/navigation";
+import LazyComponentsClient from "@/components/LazyComponentsClient";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: 'swap', // Otimização de carregamento de fonte
+  display: 'swap',
   preload: true,
 });
 
 export const metadata: Metadata = {
-  title: "Edson Vinicius | Desenvolvedor Full Stack, IA e Consultor Tech",
-  description: "Desenvolvedor Full Stack especializado em transformação digital para pequenas empresas. Desenvolvimento web, automação com IA e consultoria tecnológica personalizada.",
-  keywords: ["desenvolvedor full stack", "desenvolvimento web", "inteligência artificial", "automação", "consultoria tech", "pequenas empresas", "negócios locais", "freelancer"],
-  authors: [{ name: "Edson Vinicius" }],
+  title: {
+    default: "Edson Vinicius | Desenvolvedor Full Stack, IA e Consultor Tech",
+    template: "%s | Edson Vinicius - Lunae Solutions"
+  },
+  description: "Desenvolvedor Full Stack especializado em transformação digital para pequenas empresas. Desenvolvimento web moderno, automação com IA e consultoria tecnológica personalizada. Solicite seu orçamento!",
+  keywords: [
+    "desenvolvedor full stack brasil",
+    "desenvolvimento web pequenas empresas", 
+    "automação inteligência artificial",
+    "consultoria tecnológica freelancer",
+    "react next.js typescript",
+    "transformação digital negócios",
+    "edson vinicius desenvolvedor",
+    "lunae solutions"
+  ],
+  authors: [{ name: "Edson Vinicius", url: "https://lunaesolutions.dev" }],
   creator: "Edson Vinicius",
-  publisher: "Edson Vinicius",
-  metadataBase: new URL("https://lunaesolutions.com"),
+  publisher: "Lunae Solutions",
+  metadataBase: new URL("https://lunaesolutions.dev"),
+  alternates: {
+    canonical: "https://lunaesolutions.dev"
+  },
+  verification: {
+    google: "your-google-verification-code", // Substitua pelo código real
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
@@ -29,9 +49,10 @@ export const metadata: Metadata = {
     ],
     shortcut: '/favicon.ico',
   },
+  manifest: '/manifest.json',
   openGraph: {
     title: "Edson Vinicius | Desenvolvedor Full Stack & Consultor Tech",
-    description: "Desenvolvedor especializado em soluções digitais para pequenas empresas. Full Stack, IA e consultoria tech.",
+    description: "🚀 Transformo ideias em soluções digitais inteligentes. Desenvolvimento web, automação com IA e consultoria tech para pequenas empresas.",
     url: "https://lunaesolutions.dev",
     siteName: "Edson Vinicius - Lunae Solutions",
     type: "website",
@@ -41,30 +62,45 @@ export const metadata: Metadata = {
         url: '/icon_1.webp',
         width: 1200,
         height: 630,
-        alt: 'Lunae Solutions Logo',
+        alt: 'Edson Vinicius - Desenvolvedor Full Stack e Consultor Tech',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Edson Vinicius | Desenvolvedor Full Stack & Consultor Tech", 
-    description: "Desenvolvo soluções digitais inteligentes para pequenas empresas com tecnologia de ponta.",
+    description: "🚀 Transformo ideias em soluções digitais inteligentes para pequenas empresas. Desenvolvimento web, automação com IA e consultoria tech.",
     images: ['/icon_1.webp'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  category: 'technology',
   other: {
     'theme-color': '#3b82f6',
     'color-scheme': 'light dark',
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
   },
 };
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#3b82f6',
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#3b82f6' },
+    { media: '(prefers-color-scheme: dark)', color: '#1e40af' }
+  ],
 };
 
 export default function RootLayout({
@@ -74,45 +110,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex-shrink-0">
-                <a href="/" className="flex items-center space-x-2">
-                  <img src="/icon_1.webp" alt="Lunae Solutions" className="w-12 h-12" />
-                  <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Edson Vinicius
-                  </span>
-                </a>
-              </div>
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-8">
-                  <a href="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors flex items-center">
-                    <PiHouseBold className="mr-1" /> Início
-                  </a>
-                  <a href="/about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors flex items-center">
-                    <PiInfoBold className="mr-1" /> Sobre
-                  </a>
-                  <a href="/portfolio" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors flex items-center">
-                    <PiSuitcaseBold className="mr-1" /> Portfolio
-                  </a>
-                  <a href="mailto:viniciuspereira76@hotmail.com" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center">
-                    <PiEnvelopeBold className="mr-1" /> Contato
-                  </a>
-                </div>
-              </div>
-              <div className="md:hidden">
-                <button className="text-gray-700 dark:text-gray-300 p-2">
-                  <PiListBold className="h-6 w-6" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </nav>
-        <main className="pt-16">
+      <head>
+        {/* Preload critical resources */}
+        <link 
+          rel="preload" 
+          href="/icon_1.webp" 
+          as="image" 
+          type="image/webp"
+        />
+        <link 
+          rel="dns-prefetch" 
+          href="//fonts.googleapis.com" 
+        />
+        <link 
+          rel="preconnect" 
+          href="https://fonts.gstatic.com" 
+          crossOrigin="anonymous"
+        />
+        
+        {/* Schema.org structured data */}
+        <OrganizationSchema />
+        <PersonSchema />
+        <WebSiteSchema />
+      </head>
+      <body className={`${inter.variable} font-sans antialiased overflow-x-hidden`}>
+        <Navigation />
+        <main className="pt-16 overflow-x-hidden">
           {children}
         </main>
+        <LazyComponentsClient />
       </body>
     </html>
   );

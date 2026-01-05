@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useHydration } from '@/hooks/useHydration';
 
 export const AnimatedHero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -14,18 +15,25 @@ export const AnimatedHero = () => {
     delay: number;
   }>>([]);
   const [isClient, setIsClient] = useState(false);
+  const isHydrated = useHydration();
+
+  // Seeded random para consistência SSR/cliente
+  const seededRandom = (seed: number) => {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+  };
 
   useEffect(() => {
     setIsClient(true);
     // Reduzir partículas para melhor performance
     const particleCount = window.innerWidth < 768 ? 8 : 12; // Menos partículas em mobile
-    const newParticles = [...Array(particleCount)].map(() => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      animationX: Math.random() * 100 - 50,
-      animationY: Math.random() * 100 - 50,
-      duration: Math.random() * 3 + 2,
-      delay: Math.random() * 2,
+    const newParticles = [...Array(particleCount)].map((_, i) => ({
+      x: seededRandom(i * 123) * 100,
+      y: seededRandom(i * 456) * 100,
+      animationX: seededRandom(i * 789) * 100 - 50,
+      animationY: seededRandom(i * 101) * 100 - 50,
+      duration: seededRandom(i * 202) * 3 + 2,
+      delay: seededRandom(i * 303) * 2,
     }));
     setParticles(newParticles);
   }, []);
@@ -56,10 +64,10 @@ export const AnimatedHero = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 dark:bg-gradient-to-br dark:from-[#0B0B0F] dark:to-[#12122A]">
+    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 dark:bg-gradient-to-br dark:from-[#0B0B0F] dark:to-[#12122A] w-full layout-stable">
       {/* Animated background gradient */}
       <motion.div
-        className="absolute inset-0 opacity-20 dark:opacity-8"
+        className="absolute inset-0 opacity-20 dark:opacity-8 w-full h-full"
         animate={{
           background: [
             "radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%)",
@@ -69,24 +77,25 @@ export const AnimatedHero = () => {
           ],
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           ease: "linear",
         }}
+        style={{ contain: "layout style" }}
       />
 
       {/* Subtle dark mode gradient overlay */}
-      <div className="absolute inset-0 dark:bg-gradient-radial dark:from-purple-900/5 dark:via-blue-900/3 dark:to-transparent"></div>
+      <div className="absolute inset-0 dark:bg-gradient-radial dark:from-purple-900/5 dark:via-blue-900/3 dark:to-transparent w-full h-full"></div>
 
       {/* Floating particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         {isClient && particles.map((particle, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-20"
             animate={{
-              x: [0, particle.animationX],
-              y: [0, particle.animationY],
+              x: [0, Math.min(particle.animationX, 30)],
+              y: [0, Math.min(particle.animationY, 30)],
               scale: [0, 1, 0],
             }}
             transition={{
@@ -96,8 +105,9 @@ export const AnimatedHero = () => {
               ease: "easeInOut",
             }}
             style={{
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
+              left: `${Math.max(10, Math.min(90, particle.x))}%`,
+              top: `${Math.max(10, Math.min(90, particle.y))}%`,
+              contain: "layout style",
             }}
           />
         ))}
