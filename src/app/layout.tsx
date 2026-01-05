@@ -11,12 +11,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lunae Solutions | Desenvolvimento Full Stack, IA e Consultoria Tech",
-  description: "Transformamos negócios locais e pequenas empresas com desenvolvimento full stack, automação com IA e consultoria tecnológica personalizada. Orçamento gratuito!",
-  keywords: ["desenvolvimento web", "full stack", "inteligência artificial", "automação", "consultoria tech", "pequenas empresas", "negócios locais"],
-  authors: [{ name: "Lunae Solutions" }],
-  creator: "Lunae Solutions",
-  publisher: "Lunae Solutions",
+  title: "Edson Vinicius | Desenvolvedor Full Stack, IA e Consultor Tech",
+  description: "Desenvolvedor Full Stack especializado em transformação digital para pequenas empresas. Desenvolvimento web, automação com IA e consultoria tecnológica personalizada.",
+  keywords: ["desenvolvedor full stack", "desenvolvimento web", "inteligência artificial", "automação", "consultoria tech", "pequenas empresas", "negócios locais", "freelancer"],
+  authors: [{ name: "Edson Vinicius" }],
+  creator: "Edson Vinicius",
+  publisher: "Edson Vinicius",
   metadataBase: new URL("https://lunaesolutions.com"),
   icons: {
     icon: [
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
   },
   openGraph: {
-    title: "Lunae Solutions | Soluções Digitais Inteligentes",
-    description: "Especialistas em desenvolvimento full stack, automação com IA e consultoria tech para pequenas empresas.",
-    url: "https://lunaesolutions.com",
-    siteName: "Lunae Solutions",
+    title: "Edson Vinicius | Desenvolvedor Full Stack & Consultor Tech",
+    description: "Desenvolvedor especializado em soluções digitais para pequenas empresas. Full Stack, IA e consultoria tech.",
+    url: "https://lunaesolutions.dev",
+    siteName: "Edson Vinicius - Lunae Solutions",
     type: "website",
     locale: "pt_BR",
     images: [
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lunae Solutions | Soluções Digitais Inteligentes", 
-    description: "Transformamos negócios com tecnologia de ponta e consultoria especializada.",
+    title: "Edson Vinicius | Desenvolvedor Full Stack & Consultor Tech", 
+    description: "Desenvolvo soluções digitais inteligentes para pequenas empresas com tecnologia de ponta.",
     images: ['/icon_1.webp'],
   },
   robots: {
@@ -82,7 +82,7 @@ export default function RootLayout({
                 <a href="/" className="flex items-center space-x-2">
                   <img src="/icon_1.webp" alt="Lunae Solutions" className="w-12 h-12" />
                   <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Lunae Solutions
+                    Edson Vinicius
                   </span>
                 </a>
               </div>
@@ -97,7 +97,7 @@ export default function RootLayout({
                   <a href="/portfolio" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors flex items-center">
                     <PiSuitcaseBold className="mr-1" /> Portfolio
                   </a>
-                  <a href="mailto:contato@lunaesolutions.com" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center">
+                  <a href="mailto:viniciuspereira76@hotmail.com" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center">
                     <PiEnvelopeBold className="mr-1" /> Contato
                   </a>
                 </div>

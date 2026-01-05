@@ -45,17 +45,17 @@ export default function Home() {
                 {/* Glow effect behind title */}
                 <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-blue-600/20 dark:via-purple-600/20 dark:to-cyan-600/20 dark:blur-3xl dark:scale-110"></div>
                 <h1 className="relative text-5xl sm:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-8">
-                  <TypewriterText text="Lunae Solutions" />
+                  <TypewriterText text="Edson Vinicius" />
                 </h1>
               </div>
             </FadeInUp>
             
             <FadeInLeft delay={0.8}>
               <p className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-                Transformamos ideias em soluções digitais inteligentes. 
+                Transformo suas ideias em soluções digitais inteligentes. 
                 <br />
                 <span className="font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                  Desenvolvimento Full Stack • Automação com IA • Consultoria Tech
+                  Desenvolvedor Full Stack • Automação com IA • Consultor Tech
                 </span>
               </p>
             </FadeInLeft>
@@ -66,7 +66,7 @@ export default function Home() {
                   onClick={() => scrollToSection('servicos')}
                   className="cursor-pointer"
                 >
-                  Nossos Serviços
+                  Meus Serviços
                 </PulseButton>
                 <AnimatedButton 
                   onClick={() => scrollToSection('contato')}
@@ -86,10 +86,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <FadeInUp>
             <h2 className="text-4xl sm:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Nossos Serviços
+              Meus Serviços
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto">
-              Oferecemos soluções completas para negócios locais e pequenas empresas que desejam crescer no mundo digital
+              Ofereço soluções completas para negócios locais e pequenas empresas que desejam crescer no mundo digital
             </p>
           </FadeInUp>
 
@@ -103,7 +103,7 @@ export default function Home() {
                   Desenvolvimento Full Stack
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                  Criamos aplicações web completas, desde o frontend até o backend, 
+                  Crio aplicações web completas, desde o frontend até o backend, 
                   utilizando tecnologias modernas como React, Next.js, Node.js e bancos de dados eficientes.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
@@ -124,7 +124,7 @@ export default function Home() {
                   Automação e Agentes de IA
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                  Desenvolvemos soluções inteligentes de automação e agentes de IA 
+                  Desenvolvo soluções inteligentes de automação e agentes de IA 
                   personalizados para otimizar processos e aumentar a produtividade do seu negócio.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
@@ -145,7 +145,7 @@ export default function Home() {
                   Consultoria Tech
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                  Orientamos sua empresa na transformação digital, ajudando na escolha 
+                  Oriento sua empresa na transformação digital, ajudando na escolha 
                   das melhores tecnologias e estratégias para alcançar seus objetivos.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
@@ -165,7 +165,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <FadeInUp>
             <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Por que escolher a Lunae Solutions?
+              Por que trabalhar comigo?
             </h2>
           </FadeInUp>
 
@@ -176,7 +176,7 @@ export default function Home() {
                   <PiTargetBold className="mr-2" /> Foco em Negócios Locais
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Entendemos as necessidades específicas de pequenas empresas e negócios locais, 
+                  Entendo as necessidades específicas de pequenas empresas e negócios locais, 
                   oferecendo soluções personalizadas e acessíveis.
                 </p>
               </FloatingCard>
@@ -200,7 +200,7 @@ export default function Home() {
                   <PiHeartBold className="mr-2" /> Suporte Personalizado
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Oferecemos acompanhamento contínuo e suporte personalizado 
+                  Ofereço acompanhamento contínuo e suporte personalizado 
                   para garantir o sucesso dos seus projetos.
                 </p>
               </FloatingCard>
@@ -212,7 +212,7 @@ export default function Home() {
                   <PiCurrencyDollarBold className="mr-2" /> Preços Justos
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Praticamos preços competitivos e transparentes, 
+                  Pratico preços competitivos e transparentes, 
                   com planos flexíveis que se adaptam ao seu orçamento.
                 </p>
               </FloatingCard>
@@ -229,20 +229,20 @@ export default function Home() {
               Pronto para transformar seu negócio?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Entre em contato conosco e descubra como podemos ajudar sua empresa a crescer no mundo digital
+              Entre em contato comigo e descubra como posso ajudar sua empresa a crescer no mundo digital
             </p>
           </FadeInUp>
 
           <FadeInUp delay={0.5}>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
               <AnimatedButton 
-                href="mailto:contato@lunaesolutions.com"
+                href="mailto:viniciuspereira76@hotmail.com"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 flex items-center"
               >
-                <PiEnvelopeBold className="mr-2" /> contato@lunaesolutions.com
+                <PiEnvelopeBold className="mr-2" /> viniciuspereira76@hotmail.com
               </AnimatedButton>
               <AnimatedButton 
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5581999045078"
                 variant="secondary"
                 className="flex items-center"
               >
@@ -272,13 +272,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <FadeInUp>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Lunae Solutions
+              Edson Vinicius
             </h3>
             <p className="text-gray-300 mb-4">
-              Soluções digitais inteligentes para negócios locais e pequenas empresas
+              Desenvolvedor Full Stack • Soluções digitais inteligentes para seu negócio
             </p>
             <p className="text-sm text-gray-500">
-              © 2024 Lunae Solutions. Todos os direitos reservados.
+              © 2024 Edson Vinicius - Lunae Solutions. Todos os direitos reservados.
             </p>
           </FadeInUp>
         </div>

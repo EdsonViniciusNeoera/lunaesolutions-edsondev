@@ -23,31 +23,31 @@ export default function About() {
       icon: PiCodeBold,
       color: "text-blue-600 dark:text-blue-400",
       title: "Desenvolvimento Full Stack",
-      description: "Criamos aplicações completas, do frontend ao backend, com tecnologias modernas e escaláveis."
+      description: "Crio aplicações completas, do frontend ao backend, com tecnologias modernas e escaláveis."
     },
     {
       icon: PiRobotBold,
       color: "text-purple-600 dark:text-purple-400", 
       title: "Automação com IA",
-      description: "Desenvolvemos agentes inteligentes e soluções de automação para otimizar processos empresariais."
+      description: "Desenvolvo agentes inteligentes e soluções de automação para otimizar processos empresariais."
     },
     {
       icon: PiLightbulbBold,
       color: "text-yellow-600 dark:text-yellow-400",
       title: "Consultoria Tech",
-      description: "Orientamos negócios na escolha das melhores tecnologias e estratégias digitais."
+      description: "Oriento negócios na escolha das melhores tecnologias e estratégias digitais."
     },
     {
       icon: PiTargetBold,
       color: "text-green-600 dark:text-green-400",
       title: "Foco em Pequenas Empresas",
-      description: "Especializados em soluções acessíveis para negócios locais e pequenas empresas."
+      description: "Especializado em soluções acessíveis para negócios locais e pequenas empresas."
     },
     {
       icon: PiWrenchBold,
       color: "text-orange-600 dark:text-orange-400",
       title: "Suporte Personalizado",
-      description: "Oferecemos acompanhamento contínuo e suporte técnico personalizado."
+      description: "Ofereço acompanhamento contínuo e suporte técnico personalizado."
     },
     {
       icon: PiLightningBold,
@@ -73,7 +73,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6"
           >
-            Sobre Nós
+            Sobre Mim
           </motion.h1>
           
           <motion.p
@@ -82,7 +82,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8"
           >
-            Somos especialistas em transformar negócios locais através de desenvolvimento full stack, automação com IA e consultoria tecnológica personalizada.
+            Sou especialista em transformar negócios locais através de desenvolvimento full stack, automação com IA e consultoria tecnológica personalizada.
           </motion.p>
 
           <MagneticButton>
@@ -103,7 +103,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Por que escolher a Lunae Solutions?
+              Por que trabalhar comigo?
             </h2>
           </ScrollReveal>
 
@@ -184,7 +184,7 @@ export default function About() {
               Pronto para transformar seu negócio?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Entre em contato conosco e descubra como nossas soluções podem impulsionar o crescimento da sua empresa.
+              Entre em contato comigo e descubra como minhas soluções podem impulsionar o crescimento da sua empresa.
             </p>
             
             <MagneticButton>

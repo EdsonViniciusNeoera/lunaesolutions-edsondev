@@ -83,10 +83,10 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto text-center">
           <FadeInUp>
             <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              <TypewriterText text="Nosso Portfolio" />
+              <TypewriterText text="Meu Portfolio" />
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Conheça alguns dos projetos que desenvolvemos para nossos clientes, 
+              Conheça alguns dos projetos que desenvolvi para meus clientes, 
               transformando ideias em soluções digitais de sucesso.
             </p>
           </FadeInUp>
@@ -214,7 +214,7 @@ export default function Portfolio() {
               Pronto para o próximo projeto?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Entre em contato conosco e vamos discutir como podemos ajudar sua empresa 
+              Entre em contato comigo e vamos discutir como posso ajudar sua empresa 
               a alcançar seus objetivos digitais.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -228,7 +228,7 @@ export default function Portfolio() {
                 href="/about"
                 variant="secondary"
               >
-                Conheça Nossa Equipe
+                Conheça Meu Trabalho
               </AnimatedButton>
             </div>
           </FadeInUp>

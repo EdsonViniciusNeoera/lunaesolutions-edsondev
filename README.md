@@ -1,6 +1,14 @@
-# Lunae Solutions
+# Edson Vinicius - Lunae Solutions
 
-Uma aplicação Next.js moderna para soluções digitais inovadoras.
+Site profissional de Edson Vinicius, desenvolvedor Full Stack especializado em soluções digitais inteligentes para pequenas empresas.
+
+## Sobre o Profissional
+
+Edson Vinicius é um desenvolvedor Full Stack e consultor tech que oferece:
+
+- **Desenvolvimento Full Stack**: Aplicações web completas com React, Next.js, Node.js
+- **Automação com IA**: Chatbots inteligentes e soluções de automação personalizadas  
+- **Consultoria Tech**: Orientação estratégica para transformação digital de negócios
 
 ## Tecnologias Utilizadas
 
@@ -21,10 +29,10 @@ Uma aplicação Next.js moderna para soluções digitais inovadoras.
 
 ```bash
 # Clone o repositório
-git clone https://github.com/EdsonViniciusPS/lunaesolutions.git
+git clone https://github.com/EdsonViniciusNeoera/lunaesolutions-edsondev.git
 
 # Navegue até o diretório
-cd lunaesolutions
+cd lunaesolutions-edsondev
 
 # Instale as dependências
 npm install
@@ -48,6 +56,15 @@ npm run build
 # Inicie o servidor de produção
 npm start
 ```
+
+## Contato
+
+**Edson Vinicius**
+- Email: viniciuspereira76@hotmail.com
+- LinkedIn: [linkedin.com/in/edsonvinicius](https://linkedin.com/in/edsonvinicius)
+- WhatsApp: [Entre em contato](https://wa.me/5581999904-5078)
+
+Especialista em desenvolvimento Full Stack, automação com IA e consultoria tecnológica para pequenas empresas e negócios locais.
 
 ## Estrutura do Projeto
 

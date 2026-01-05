@@ -1,6 +1,8 @@
 {
-  "name": "lunae-solutions",
+  "name": "edsonvinicius-lunaesolutions",
   "version": "0.1.0",
+  "description": "Site profissional de Edson Vinicius - Desenvolvedor Full Stack e Consultor Tech",
+  "author": "Edson Vinicius <viniciuspereira76@hotmail.com>",
   "private": true,
   "scripts": {
     "dev": "next dev",
