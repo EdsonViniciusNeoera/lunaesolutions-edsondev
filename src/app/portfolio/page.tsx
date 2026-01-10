@@ -74,8 +74,6 @@ export default function Portfolio() {
     }
   ];
 
-  const categories = ["Todos", "Full Stack", "IA & Automação", "Consultoria Tech"];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -96,20 +94,6 @@ export default function Portfolio() {
       {/* Portfolio Section */}
       <section className="py-20 px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Category Filter */}
-          <FadeInUp>
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className="px-6 py-3 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </FadeInUp>
-
           {/* Projects Grid */}
           <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -218,18 +202,12 @@ export default function Portfolio() {
               Entre em contato comigo e vamos discutir como posso ajudar sua empresa 
               a alcançar seus objetivos digitais.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <AnimatedButton 
                 href="/"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white"
               >
                 Solicitar Orçamento
-              </AnimatedButton>
-              <AnimatedButton 
-                href="/about"
-                variant="secondary"
-              >
-                Conheça Meu Trabalho
               </AnimatedButton>
             </div>
           </FadeInUp>
