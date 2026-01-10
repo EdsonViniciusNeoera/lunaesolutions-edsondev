@@ -15,7 +15,7 @@ export function useHydration() {
 
 // Hook para valores que só devem existir no cliente
 export function useClientOnly<T>(clientValue: T, serverValue?: T): T | undefined {
-  const isHydrated = useHydrated();
+  const isHydrated = useHydration();
   
   if (!isHydrated) {
     return serverValue;

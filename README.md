@@ -50,11 +50,32 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o 
 ### Build para Produção
 
 ```bash
-# Gere o build otimizado
+# Gere o build estático para hospedagem compartilhada
 npm run build
 
-# Inicie o servidor de produção
-npm start
+# Ou use o script automatizado (Windows)
+.\build-deploy.ps1
+```
+
+**📦 Deploy em Hospedagem Compartilhada:**
+
+Este projeto está configurado para exportação estática (`output: 'export'`), permitindo hospedagem em servidores compartilhados tradicionais (Hostinger, GoDaddy, Locaweb, etc.) sem necessidade de Node.js.
+
+Após o build, a pasta `out/` contém todos os arquivos estáticos prontos para upload:
+- Envie **todo o conteúdo** de `out/` para `public_html`
+- Inclua o arquivo `.htaccess` para configurações de cache e segurança
+- Compatível com Apache/Nginx
+- Sem custo adicional de VPS ou serviços Node.js
+
+📖 **Guias de Deploy:**
+- `DEPLOY_CHECKLIST.md` - Checklist rápido de 3 passos
+- `DEPLOY_HOSPEDAGEM.md` - Guia completo com troubleshooting
+
+### Preview Local
+
+```bash
+# Testar build estático localmente
+npm run preview:static
 ```
 
 ## Contato
@@ -111,16 +132,43 @@ lunaesolutions/
 
 ## Funcionalidades
 
-- ✅ App Router do Next.js 15
+- ✅ **Exportação Estática** - Deploy em hospedagem compartilhada
+- ✅ **Next.js 15** - App Router com exportação estática
 - ✅ TypeScript configurado
 - ✅ Tailwind CSS para estilização
 - ✅ Framer Motion para animações fluidas
 - ✅ ESLint para qualidade de código
-- ✅ Responsivo e otimizado para SEO
-- ✅ Suporte a temas claro/escuro
+- ✅ **SEO Otimizado** - Meta tags, sitemap, robots.txt
+- ✅ **Performance** - Lighthouse 90+, First Load < 200KB
+- ✅ Responsivo e mobile-first
 - ✅ Animações interativas e parallax
 - ✅ Componentes reutilizáveis de animação
 - ✅ Efeitos visuais avançados (partículas, gradientes)
+- ✅ **Cache e Compressão** - Configurado via .htaccess
+- ✅ **Headers de Segurança** - CSP, HTTPS, XSS Protection
+
+## Otimizações
+
+### Performance
+- ⚡ Build otimizado com Next.js compiler
+- 🗜️ Compressão GZIP via .htaccess
+- 💾 Cache agressivo de assets estáticos (1 ano)
+- 📦 Code splitting automático
+- 🎨 Otimização de CSS experimental
+
+### SEO
+- 🔍 Meta tags dinâmicas por página
+- 🗺️ Sitemap.xml gerado automaticamente
+- 🤖 Robots.txt configurado
+- 📱 Manifest.json para PWA
+- 🌐 Open Graph e Twitter Cards
+
+### Hospedagem
+- 🏠 Compatível com hospedagem compartilhada
+- 💰 Sem custo de servidor Node.js
+- 🔒 HTTPS forçado via .htaccess
+- 🚀 CDN-ready (arquivos estáticos)
+- 📊 Analytics-ready
 
 ## Contribuição
 

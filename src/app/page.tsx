@@ -39,28 +39,33 @@ const LazyAnimatedHero = dynamic(
   }
 );
 
+// Constantes
+const HEADER_OFFSET = 80;
+const SITE_URL = "https://lunaesolutions.dev";
+
+const BREADCRUMB_ITEMS = [
+  { name: "Início", url: SITE_URL }
+];
+
+// Funções utilitárias
+const scrollToSection = (sectionId: string): void => {
+  const element = document.getElementById(sectionId);
+  if (!element) return;
+
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - HEADER_OFFSET;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
+};
+
 export default function Home() {
-  const breadcrumbItems = [
-    { name: "Início", url: "https://lunaesolutions.dev" }
-  ];
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerOffset = 80; // Altura do header fixo
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <>
-      <BreadcrumbSchema items={breadcrumbItems} />
+      <BreadcrumbSchema items={BREADCRUMB_ITEMS} />
       <div className="relative page-container">
         {/* Hero Section */}
         <section className="relative min-h-screen pt-16 hero-container">
@@ -308,7 +313,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-500 to-green-600 p-6 rounded-2xl text-white">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 rounded-2xl text-white">
                   <div className="flex items-center mb-3">
                     <PiHeartBold className="mr-2 text-2xl" />
                     <h4 className="font-bold text-lg">Por que escolher meus serviços?</h4>

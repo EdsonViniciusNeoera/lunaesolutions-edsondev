@@ -213,7 +213,7 @@ export default function About() {
               
               <MagneticButton>
                 <motion.a
-                  href="https://wa.me/5581999904-5078?text=Olá! Vi seu site e gostaria de conversar sobre um projeto."
+                  href="https://wa.me/5581999045078?text=Olá! Vi seu site e gostaria de conversar sobre um projeto."
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-block border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"

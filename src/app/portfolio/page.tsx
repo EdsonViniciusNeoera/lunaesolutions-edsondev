@@ -64,13 +64,13 @@ export default function Portfolio() {
       features: ["Campanhas automáticas", "Análise preditiva", "ROI tracking", "A/B testing"]
     },
     {
-      title: "Auditoria de Segurança Digital",
-      category: "Consultoria Tech",
-      description: "Avaliação completa de segurança e implementação de melhores práticas.",
-      tech: ["Security Audit", "OWASP", "SSL/TLS", "Backup"],
+      title: "MedUBS",
+      category: "Full Stack",
+      description: "MedUBS é uma plataforma digital desenvolvida para apoiar médicos que atuam em Unidades Básicas de Saúde (UBS), emergências e outros serviços do Sistema Único de Saúde (SUS), oferecendo agilidade, segurança clínica e suporte à tomada de decisão no atendimento diário. A solução foi pensada para uso prático em campos, atendendo especialmente médicos em ambientes de alta demanda e recursos limitados.",
+      tech: ["Flutter", "Next.js", "Python FastAPI", "Firebase", "Supabase"],
       icon: PiShieldCheckBold,
       color: "text-red-600 dark:text-red-400",
-      features: ["Auditoria completa", "Plano de ação", "Implementação", "Treinamento"]
+      features: ["Suporte à tomada de decisão", "Interface otimizada", "Segurança clínica", "Acesso offline"]
     }
   ];
 

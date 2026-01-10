@@ -9,6 +9,30 @@ interface NavProps {
   className?: string;
 }
 
+interface NavItem {
+  href: string;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+// Constantes
+const SCROLL_THRESHOLD = 20;
+const MOBILE_BREAKPOINT = 768;
+const CONTACT_EMAIL = "viniciuspereira76@hotmail.com";
+const LOGO_PATH = "/icon_1.webp";
+const BRAND_NAME = "Edson Vinicius";
+
+const NAV_ITEMS: NavItem[] = [
+  { href: "/", label: "Início", icon: PiHouseBold },
+  { href: "/about/", label: "Sobre", icon: PiInfoBold },
+  { href: "/portfolio/", label: "Portfolio", icon: PiSuitcaseBold },
+];
+
+// Funções utilitárias
+const toggleBodyScroll = (disable: boolean): void => {
+  document.body.style.overflow = disable ? 'hidden' : '';
+};
+
 const Navigation = ({ className = "" }: NavProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,7 +41,7 @@ const Navigation = ({ className = "" }: NavProps) => {
   // Monitor scroll para efeito de navbar
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -27,7 +51,7 @@ const Navigation = ({ className = "" }: NavProps) => {
   // Fechar menu mobile ao redimensionar
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= MOBILE_BREAKPOINT) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -38,22 +62,9 @@ const Navigation = ({ className = "" }: NavProps) => {
 
   // Prevenir scroll quando menu mobile está aberto
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
+    toggleBodyScroll(isMobileMenuOpen);
+    return () => toggleBodyScroll(false);
   }, [isMobileMenuOpen]);
-
-  const navItems = [
-    { href: "/", label: "Início", icon: PiHouseBold },
-    { href: "/about", label: "Sobre", icon: PiInfoBold },
-    { href: "/portfolio", label: "Portfolio", icon: PiSuitcaseBold },
-  ];
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
@@ -70,7 +81,7 @@ const Navigation = ({ className = "" }: NavProps) => {
             <div className="flex-shrink-0">
               <a href="/" className="flex items-center space-x-2 group">
                 <img 
-                  src="/icon_1.webp" 
+                  src={LOGO_PATH}
                   alt="Lunae Solutions" 
                   className="w-10 h-10 sm:w-12 sm:h-12"
                   loading="eager"
@@ -78,13 +89,13 @@ const Navigation = ({ className = "" }: NavProps) => {
                   height="48"
                 />
                 <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Edson Vinicius
+                  {BRAND_NAME}
                 </span>
               </a>
             </div>
             <div className="hidden md:block">
               <div className="flex items-center space-x-4 lg:space-x-8">
-                {navItems.map((item) => {
+                {NAV_ITEMS.map((item) => {
                   const IconComponent = item.icon;
                   return (
                     <a
@@ -99,7 +110,7 @@ const Navigation = ({ className = "" }: NavProps) => {
                   );
                 })}
                 <a
-                  href="mailto:viniciuspereira76@hotmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center"
                 >
                   <PiEnvelopeBold className="mr-1.5" />
@@ -138,7 +149,7 @@ const Navigation = ({ className = "" }: NavProps) => {
                 onClick={handleLinkClick}
               >
                 <img 
-                  src="/icon_1.webp" 
+                  src={LOGO_PATH}
                   alt="Lunae Solutions" 
                   className="w-10 h-10 sm:w-12 sm:h-12 transition-transform group-hover:scale-105"
                   loading="eager"
@@ -146,7 +157,7 @@ const Navigation = ({ className = "" }: NavProps) => {
                   height="48"
                 />
                 <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Edson Vinicius
+                  {BRAND_NAME}
                 </span>
               </a>
             </div>
@@ -154,7 +165,7 @@ const Navigation = ({ className = "" }: NavProps) => {
             {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="flex items-center space-x-4 lg:space-x-8">
-                {navItems.map((item) => {
+                {NAV_ITEMS.map((item) => {
                   const IconComponent = item.icon;
                   return (
                     <a
@@ -169,7 +180,7 @@ const Navigation = ({ className = "" }: NavProps) => {
                   );
                 })}
                 <a
-                  href="mailto:viniciuspereira76@hotmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center"
                 >
                   <PiEnvelopeBold className="mr-1.5" />
@@ -220,7 +231,7 @@ const Navigation = ({ className = "" }: NavProps) => {
               className="fixed top-16 right-0 bottom-0 w-full max-w-sm bg-white dark:bg-gray-900 shadow-2xl z-50 md:hidden"
             >
               <div className="flex flex-col p-6 space-y-4">
-                {navItems.map((item, index) => {
+                {NAV_ITEMS.map((item, index) => {
                   const IconComponent = item.icon;
                   return (
                     <motion.a
@@ -241,11 +252,11 @@ const Navigation = ({ className = "" }: NavProps) => {
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navItems.length * 0.1 }}
+                  transition={{ delay: NAV_ITEMS.length * 0.1 }}
                   className="pt-4"
                 >
                   <a
-                    href="mailto:viniciuspereira76@hotmail.com"
+                    href={`mailto:${CONTACT_EMAIL}`}
                     onClick={handleLinkClick}
                     className="flex items-center justify-center space-x-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300"
                   >

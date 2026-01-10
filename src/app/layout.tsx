@@ -5,6 +5,16 @@ import { OrganizationSchema, PersonSchema, WebSiteSchema } from "@/components/se
 import Navigation from "@/components/navigation";
 import LazyComponentsClient from "@/components/LazyComponentsClient";
 
+// Constantes
+const SITE_URL = "https://lunaesolutions.dev";
+const SITE_NAME = "Edson Vinicius - Lunae Solutions";
+const AUTHOR_NAME = "Edson Vinicius";
+const SITE_TITLE = "Edson Vinicius | Desenvolvedor Full Stack, IA e Consultor Tech";
+const SITE_DESCRIPTION = "Desenvolvedor Full Stack especializado em transformação digital para pequenas empresas. Desenvolvimento web moderno, automação com IA e consultoria tecnológica personalizada. Solicite seu orçamento!";
+const OG_IMAGE = "/icon_1.webp";
+const PRIMARY_COLOR = "#3b82f6";
+const DARK_COLOR = "#1e40af";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -14,10 +24,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Edson Vinicius | Desenvolvedor Full Stack, IA e Consultor Tech",
-    template: "%s | Edson Vinicius - Lunae Solutions"
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`
   },
-  description: "Desenvolvedor Full Stack especializado em transformação digital para pequenas empresas. Desenvolvimento web moderno, automação com IA e consultoria tecnológica personalizada. Solicite seu orçamento!",
+  description: SITE_DESCRIPTION,
   keywords: [
     "desenvolvedor full stack brasil",
     "desenvolvimento web pequenas empresas", 
@@ -28,24 +38,24 @@ export const metadata: Metadata = {
     "edson vinicius desenvolvedor",
     "lunae solutions"
   ],
-  authors: [{ name: "Edson Vinicius", url: "https://lunaesolutions.dev" }],
-  creator: "Edson Vinicius",
+  authors: [{ name: AUTHOR_NAME, url: SITE_URL }],
+  creator: AUTHOR_NAME,
   publisher: "Lunae Solutions",
-  metadataBase: new URL("https://lunaesolutions.dev"),
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: "https://lunaesolutions.dev"
+    canonical: SITE_URL
   },
   verification: {
-    google: "your-google-verification-code", // Substitua pelo código real
+    google: "your-google-verification-code",
   },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
-      { url: '/icon_1.webp', sizes: '32x32', type: 'image/webp' },
-      { url: '/icon_1.webp', sizes: '192x192', type: 'image/webp' },
+      { url: OG_IMAGE, sizes: '32x32', type: 'image/webp' },
+      { url: OG_IMAGE, sizes: '192x192', type: 'image/webp' },
     ],
     apple: [
-      { url: '/icon_1.webp', sizes: '180x180', type: 'image/webp' },
+      { url: OG_IMAGE, sizes: '180x180', type: 'image/webp' },
     ],
     shortcut: '/favicon.ico',
   },
@@ -53,13 +63,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Edson Vinicius | Desenvolvedor Full Stack & Consultor Tech",
     description: "🚀 Transformo ideias em soluções digitais inteligentes. Desenvolvimento web, automação com IA e consultoria tech para pequenas empresas.",
-    url: "https://lunaesolutions.dev",
-    siteName: "Edson Vinicius - Lunae Solutions",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     type: "website",
     locale: "pt_BR",
     images: [
       {
-        url: '/icon_1.webp',
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: 'Edson Vinicius - Desenvolvedor Full Stack e Consultor Tech',
@@ -70,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Edson Vinicius | Desenvolvedor Full Stack & Consultor Tech", 
     description: "🚀 Transformo ideias em soluções digitais inteligentes para pequenas empresas. Desenvolvimento web, automação com IA e consultoria tech.",
-    images: ['/icon_1.webp'],
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
@@ -85,7 +95,7 @@ export const metadata: Metadata = {
   },
   category: 'technology',
   other: {
-    'theme-color': '#3b82f6',
+    'theme-color': PRIMARY_COLOR,
     'color-scheme': 'light dark',
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
@@ -98,8 +108,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#3b82f6' },
-    { media: '(prefers-color-scheme: dark)', color: '#1e40af' }
+    { media: '(prefers-color-scheme: light)', color: PRIMARY_COLOR },
+    { media: '(prefers-color-scheme: dark)', color: DARK_COLOR }
   ],
 };
 
